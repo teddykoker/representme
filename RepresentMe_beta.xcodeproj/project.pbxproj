@@ -13,7 +13,7 @@
 		7E3B087E1AEEE29800327B65 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E3B087C1AEEE29800327B65 /* LaunchScreen.xib */; };
 		7E3B088A1AEEE29800327B65 /* RepresentMe_betaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B08891AEEE29800327B65 /* RepresentMe_betaTests.swift */; };
 		7E3B08941AEEE69300327B65 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B08931AEEE69300327B65 /* MenuController.swift */; };
-		7E3B08961AEEE77100327B65 /* LegislatorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B08951AEEE77100327B65 /* LegislatorsViewController.swift */; };
+		7E3B08961AEEE77100327B65 /* LegislatorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B08951AEEE77100327B65 /* LegislatorsTableViewController.swift */; };
 		7E3B08981AEEE81A00327B65 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B08971AEEE81A00327B65 /* SettingsViewController.swift */; };
 		7E3B089A1AEEE86C00327B65 /* UpdatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B08991AEEE86C00327B65 /* UpdatesViewController.swift */; };
 		7E5F11EA1AEF15D600E366A2 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F11E91AEF15D600E366A2 /* SWRevealViewController.m */; };
@@ -40,7 +40,7 @@
 		7E3B08881AEEE29800327B65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E3B08891AEEE29800327B65 /* RepresentMe_betaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentMe_betaTests.swift; sourceTree = "<group>"; };
 		7E3B08931AEEE69300327B65 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
-		7E3B08951AEEE77100327B65 /* LegislatorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegislatorsViewController.swift; sourceTree = "<group>"; };
+		7E3B08951AEEE77100327B65 /* LegislatorsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegislatorsTableViewController.swift; sourceTree = "<group>"; };
 		7E3B08971AEEE81A00327B65 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7E3B08991AEEE86C00327B65 /* UpdatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatesViewController.swift; sourceTree = "<group>"; };
 		7E5F11E71AEF15C100E366A2 /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 				7E5F11E71AEF15C100E366A2 /* SWRevealViewController.h */,
 				7E3B08731AEEE29800327B65 /* AppDelegate.swift */,
 				7E3B08931AEEE69300327B65 /* MenuController.swift */,
-				7E3B08951AEEE77100327B65 /* LegislatorsViewController.swift */,
+				7E3B08951AEEE77100327B65 /* LegislatorsTableViewController.swift */,
 				7E3B08971AEEE81A00327B65 /* SettingsViewController.swift */,
 				7E3B08991AEEE86C00327B65 /* UpdatesViewController.swift */,
 				7E3B08771AEEE29800327B65 /* Main.storyboard */,
@@ -229,7 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E3B08941AEEE69300327B65 /* MenuController.swift in Sources */,
-				7E3B08961AEEE77100327B65 /* LegislatorsViewController.swift in Sources */,
+				7E3B08961AEEE77100327B65 /* LegislatorsTableViewController.swift in Sources */,
 				7E3B08981AEEE81A00327B65 /* SettingsViewController.swift in Sources */,
 				7E3B08741AEEE29800327B65 /* AppDelegate.swift in Sources */,
 				7E3B089A1AEEE86C00327B65 /* UpdatesViewController.swift in Sources */,

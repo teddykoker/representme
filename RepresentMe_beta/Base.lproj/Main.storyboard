@@ -23,7 +23,7 @@
         <!--Legislators-->
         <scene sceneID="KAm-bZ-PcK">
             <objects>
-                <tableViewController id="bsu-5z-Gwd" customClass="LegislatorsViewController" customModule="RepresentMe_beta" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="bsu-5z-Gwd" customClass="LegislatorsTableViewController" customModule="RepresentMe_beta" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="uba-9Z-Tds">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CUF-gZ-Ran" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1486" y="-24"/>
+            <point key="canvasLocation" x="1508" y="-24"/>
         </scene>
         <!--House Updates-->
         <scene sceneID="7gS-Pv-jxb">
