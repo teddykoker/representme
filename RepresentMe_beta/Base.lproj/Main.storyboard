@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MDO-hI-0xz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MDO-hI-0xz">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
@@ -105,6 +105,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="GQ3-qQ-q49" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="yGR-HC-69A"/>
+                        <segue destination="3US-jr-ezm" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="U7z-Af-Rxw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IEV-lT-8ym" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -148,6 +152,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="3US-jr-ezm" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="eDo-5G-xcv"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kzU-O9-zpj">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -162,6 +169,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="m2U-o3-QZ6" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="4Js-iQ-Vso"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fpl-Ye-v5Z">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -177,6 +187,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Byl-zu-85h" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="cMo-4v-1h2"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -224,4 +237,7 @@
             <point key="canvasLocation" x="86" y="1416"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="eDo-5G-xcv"/>
+    </inferredMetricsTieBreakers>
 </document>
