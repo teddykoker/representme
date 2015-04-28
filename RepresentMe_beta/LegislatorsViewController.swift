@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class LegislatorsViewController: UIViewController{
+class LegislatorsViewController: UITableViewController{
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     override func viewDidLoad() {

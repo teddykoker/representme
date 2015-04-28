@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MDO-hI-0xz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MDO-hI-0xz">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="bUA-DM-Hsf" kind="relationship" relationship="rootViewController" id="p6x-j3-v97"/>
+                        <segue destination="bsu-5z-Gwd" kind="relationship" relationship="rootViewController" id="nfU-nT-1Cb"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aoq-41-7kQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -21,28 +21,57 @@
             <point key="canvasLocation" x="86" y="-24"/>
         </scene>
         <!--Legislators-->
-        <scene sceneID="P3t-ah-GV7">
+        <scene sceneID="KAm-bZ-PcK">
             <objects>
-                <viewController id="bUA-DM-Hsf" customClass="LegislatorsViewController" customModule="RepresentMe_beta" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="bsu-5z-Gwd" customClass="LegislatorsViewController" customModule="RepresentMe_beta" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="uba-9Z-Tds">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZKR-33-J7i">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZKR-33-J7i" id="ShA-6p-4Sf">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="qCs-LO-z4l" kind="show" id="2TX-Fp-BMl"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bsu-5z-Gwd" id="gOg-97-nsX"/>
+                            <outlet property="delegate" destination="bsu-5z-Gwd" id="9DK-gX-7Yb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Legislators" id="icS-Qd-Odc">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="xhR-DL-dQS"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="xhR-DL-dQS" id="Qyn-Fc-lE6"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZMh-IW-ZEP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="798" y="-24"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Xxv-Xp-jGX">
+            <objects>
+                <viewController id="qCs-LO-z4l" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hCn-62-MkX"/>
-                        <viewControllerLayoutGuide type="bottom" id="QTT-fK-RlS"/>
+                        <viewControllerLayoutGuide type="top" id="B1k-WD-3gA"/>
+                        <viewControllerLayoutGuide type="bottom" id="Et4-iX-VBC"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Uk9-07-uas">
+                    <view key="view" contentMode="scaleToFill" id="FH3-tU-xox">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Legislators" id="1zN-W2-h6R">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="QJh-aj-vCA"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="menuButton" destination="QJh-aj-vCA" id="jGJ-G3-4DW"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mjj-qC-DgC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CUF-gZ-Ran" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="798" y="-24"/>
+            <point key="canvasLocation" x="1486" y="-24"/>
         </scene>
         <!--House Updates-->
         <scene sceneID="7gS-Pv-jxb">
@@ -133,7 +162,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Represent Me" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lti-fv-35Y">
                                                     <rect key="frame" x="8" y="11" width="167" height="21"/>
                                                     <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
