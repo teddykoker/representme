@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MenuController.swift
 //  RepresentMe_beta
 //
 //  Created by Teddy Koker on 4/27/15.
@@ -8,18 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class MenuController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
     }
-
-
 }
-
