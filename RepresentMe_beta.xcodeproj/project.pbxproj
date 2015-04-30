@@ -17,6 +17,7 @@
 		7E3B08981AEEE81A00327B65 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B08971AEEE81A00327B65 /* SettingsViewController.swift */; };
 		7E3B089A1AEEE86C00327B65 /* UpdatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B08991AEEE86C00327B65 /* UpdatesViewController.swift */; };
 		7E5F11EA1AEF15D600E366A2 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F11E91AEF15D600E366A2 /* SWRevealViewController.m */; };
+		7E8963E51AF01FE800024DDA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E8963E41AF01FE800024DDA /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		7E5F11E71AEF15C100E366A2 /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		7E5F11E81AEF15D500E366A2 /* RepresentMe_beta-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RepresentMe_beta-Bridging-Header.h"; sourceTree = "<group>"; };
 		7E5F11E91AEF15D600E366A2 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		7E8963E41AF01FE800024DDA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E8963E51AF01FE800024DDA /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +72,7 @@
 		7E3B08651AEEE29800327B65 = {
 			isa = PBXGroup;
 			children = (
+				7E8963E41AF01FE800024DDA /* CoreLocation.framework */,
 				7E3B08701AEEE29800327B65 /* RepresentMe_beta */,
 				7E3B08861AEEE29800327B65 /* RepresentMe_betaTests */,
 				7E3B086F1AEEE29800327B65 /* Products */,

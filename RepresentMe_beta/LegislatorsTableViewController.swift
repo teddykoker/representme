@@ -24,7 +24,7 @@ class LegislatorsTableViewController: UITableViewController{
         
         // *****REFRESH*****
         var refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: Selector("refreshComplete"), forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refreshControl
         
         
@@ -36,7 +36,7 @@ class LegislatorsTableViewController: UITableViewController{
     }
     //called by refreshControl
     func refresh(){
-        
+        refreshComplete()
     }
     //called by data-getting classes when they finish
     func refreshComplete(){
