@@ -33,7 +33,6 @@ class DataGetter: NSObject,CLLocationManagerDelegate {
         let lat: Double = location.coordinate.latitude
         let long: Double = location.coordinate.longitude
         loadLegislators(lat, long: long)
-        println("MOOOOO")
         self.locationManager.stopUpdatingLocation()
     }
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {

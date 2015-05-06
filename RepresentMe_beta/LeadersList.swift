@@ -17,11 +17,17 @@ class LeadersList {
         
     }
     private(set) var leaders:[Leader]
+    private var selected: Int
     
     init(){
         leaders = []
+        selected = 0
     }
     func setLeaders(l:[Leader]){
         leaders = l
     }
+    func setSelected(index: Int){
+        selected = index
+    }
+
 }
