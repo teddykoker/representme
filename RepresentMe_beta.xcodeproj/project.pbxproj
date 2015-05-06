@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E2A7DEB1AF994550032C727 /* DataGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2A7DEA1AF994550032C727 /* DataGetter.swift */; };
+		7E2A7DED1AF999CC0032C727 /* Leader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2A7DEC1AF999CC0032C727 /* Leader.swift */; };
+		7E2A7DEF1AF99A5B0032C727 /* LeadersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2A7DEE1AF99A5B0032C727 /* LeadersList.swift */; };
 		7E3B08741AEEE29800327B65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B08731AEEE29800327B65 /* AppDelegate.swift */; };
 		7E3B08791AEEE29800327B65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E3B08771AEEE29800327B65 /* Main.storyboard */; };
 		7E3B087B1AEEE29800327B65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E3B087A1AEEE29800327B65 /* Images.xcassets */; };
@@ -31,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E2A7DEA1AF994550032C727 /* DataGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataGetter.swift; sourceTree = "<group>"; };
+		7E2A7DEC1AF999CC0032C727 /* Leader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leader.swift; sourceTree = "<group>"; };
+		7E2A7DEE1AF99A5B0032C727 /* LeadersList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeadersList.swift; sourceTree = "<group>"; };
 		7E3B086E1AEEE29800327B65 /* RepresentMe_beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepresentMe_beta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3B08721AEEE29800327B65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E3B08731AEEE29800327B65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +105,9 @@
 				7E3B08971AEEE81A00327B65 /* SettingsViewController.swift */,
 				7E3B08991AEEE86C00327B65 /* UpdatesViewController.swift */,
 				7E3B08771AEEE29800327B65 /* Main.storyboard */,
+				7E2A7DEA1AF994550032C727 /* DataGetter.swift */,
+				7E2A7DEE1AF99A5B0032C727 /* LeadersList.swift */,
+				7E2A7DEC1AF999CC0032C727 /* Leader.swift */,
 				7E3B087A1AEEE29800327B65 /* Images.xcassets */,
 				7E3B087C1AEEE29800327B65 /* LaunchScreen.xib */,
 				7E3B08711AEEE29800327B65 /* Supporting Files */,
@@ -235,8 +244,11 @@
 				7E3B08941AEEE69300327B65 /* MenuController.swift in Sources */,
 				7E3B08961AEEE77100327B65 /* LegislatorsTableViewController.swift in Sources */,
 				7E3B08981AEEE81A00327B65 /* SettingsViewController.swift in Sources */,
+				7E2A7DEB1AF994550032C727 /* DataGetter.swift in Sources */,
+				7E2A7DED1AF999CC0032C727 /* Leader.swift in Sources */,
 				7E3B08741AEEE29800327B65 /* AppDelegate.swift in Sources */,
 				7E3B089A1AEEE86C00327B65 /* UpdatesViewController.swift in Sources */,
+				7E2A7DEF1AF99A5B0032C727 /* LeadersList.swift in Sources */,
 				7E5F11EA1AEF15D600E366A2 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
