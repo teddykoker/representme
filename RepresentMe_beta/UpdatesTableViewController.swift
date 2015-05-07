@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class UpdatesViewController: UIViewController{
+class UpdatesTableViewController: UITableViewController{
     @IBOutlet weak var menuButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()

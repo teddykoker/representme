@@ -29,9 +29,10 @@ class LegislatorsTableViewController: UITableViewController{
         refreshControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refreshControl
         
+        // *****SETUP*****
         datagetter = DataGetter()
         leaderList = LeadersList.list
-        
+        refresh()
         
     }
     override func didReceiveMemoryWarning() {
