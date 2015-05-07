@@ -264,6 +264,9 @@
                     <navigationItem key="navigationItem" title="Updates" id="WtR-Ix-q5q">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="G9f-vJ-EgJ"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="G9f-vJ-EgJ" id="qis-dP-okY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJP-CO-Ua1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
