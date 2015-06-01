@@ -22,6 +22,7 @@
 		7E3B089A1AEEE86C00327B65 /* UpdatesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B08991AEEE86C00327B65 /* UpdatesTableViewController.swift */; };
 		7E5F11EA1AEF15D600E366A2 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F11E91AEF15D600E366A2 /* SWRevealViewController.m */; };
 		7E8963E51AF01FE800024DDA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E8963E41AF01FE800024DDA /* CoreLocation.framework */; };
+		8E49C5DC1B1BE5B6003FD943 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E49C5DB1B1BE5B6003FD943 /* Bill.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		7E5F11E81AEF15D500E366A2 /* RepresentMe_beta-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RepresentMe_beta-Bridging-Header.h"; sourceTree = "<group>"; };
 		7E5F11E91AEF15D600E366A2 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		7E8963E41AF01FE800024DDA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8E49C5DB1B1BE5B6003FD943 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				7E2A7DEA1AF994550032C727 /* DataGetter.swift */,
 				7E2A7DEE1AF99A5B0032C727 /* LeadersList.swift */,
 				7E2A7DEC1AF999CC0032C727 /* Leader.swift */,
+				8E49C5DB1B1BE5B6003FD943 /* Bill.swift */,
 				7E3B087A1AEEE29800327B65 /* Images.xcassets */,
 				7E3B087C1AEEE29800327B65 /* LaunchScreen.xib */,
 				7E3B08711AEEE29800327B65 /* Supporting Files */,
@@ -245,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E3B08941AEEE69300327B65 /* MenuController.swift in Sources */,
+				8E49C5DC1B1BE5B6003FD943 /* Bill.swift in Sources */,
 				7E3B08961AEEE77100327B65 /* LegislatorsTableViewController.swift in Sources */,
 				7E3B08981AEEE81A00327B65 /* SettingsViewController.swift in Sources */,
 				7E2A7DEB1AF994550032C727 /* DataGetter.swift in Sources */,
