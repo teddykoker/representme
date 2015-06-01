@@ -1,5 +1,5 @@
 //
-//  UpdatesViewController.swift
+//  BillTableViewController.swift
 //  RepresentMe_beta
 //
 //  Created by Teddy Koker on 4/27/15.
@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class UpdatesTableViewController: UITableViewController{
+class BillTableViewController: UITableViewController{
     @IBOutlet weak var menuButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()

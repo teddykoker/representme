@@ -19,7 +19,7 @@
 		7E3B08941AEEE69300327B65 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B08931AEEE69300327B65 /* MenuController.swift */; };
 		7E3B08961AEEE77100327B65 /* LegislatorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B08951AEEE77100327B65 /* LegislatorsTableViewController.swift */; };
 		7E3B08981AEEE81A00327B65 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B08971AEEE81A00327B65 /* SettingsViewController.swift */; };
-		7E3B089A1AEEE86C00327B65 /* UpdatesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B08991AEEE86C00327B65 /* UpdatesTableViewController.swift */; };
+		7E3B089A1AEEE86C00327B65 /* BillTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B08991AEEE86C00327B65 /* BillTableViewController.swift */; };
 		7E5F11EA1AEF15D600E366A2 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F11E91AEF15D600E366A2 /* SWRevealViewController.m */; };
 		7E8963E51AF01FE800024DDA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E8963E41AF01FE800024DDA /* CoreLocation.framework */; };
 		8E49C5DC1B1BE5B6003FD943 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E49C5DB1B1BE5B6003FD943 /* Bill.swift */; };
@@ -52,7 +52,7 @@
 		7E3B08931AEEE69300327B65 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		7E3B08951AEEE77100327B65 /* LegislatorsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegislatorsTableViewController.swift; sourceTree = "<group>"; };
 		7E3B08971AEEE81A00327B65 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		7E3B08991AEEE86C00327B65 /* UpdatesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatesTableViewController.swift; sourceTree = "<group>"; };
+		7E3B08991AEEE86C00327B65 /* BillTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillTableViewController.swift; sourceTree = "<group>"; };
 		7E5F11E71AEF15C100E366A2 /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		7E5F11E81AEF15D500E366A2 /* RepresentMe_beta-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RepresentMe_beta-Bridging-Header.h"; sourceTree = "<group>"; };
 		7E5F11E91AEF15D600E366A2 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 				7E3B08931AEEE69300327B65 /* MenuController.swift */,
 				7E3B08951AEEE77100327B65 /* LegislatorsTableViewController.swift */,
 				7E3B08971AEEE81A00327B65 /* SettingsViewController.swift */,
-				7E3B08991AEEE86C00327B65 /* UpdatesTableViewController.swift */,
+				7E3B08991AEEE86C00327B65 /* BillTableViewController.swift */,
 				7E3B08771AEEE29800327B65 /* Main.storyboard */,
 				7E2A7DF01AFA73770032C727 /* LegislatorViewController.swift */,
 				7E2A7DEA1AF994550032C727 /* DataGetter.swift */,
@@ -254,7 +254,7 @@
 				7E2A7DEB1AF994550032C727 /* DataGetter.swift in Sources */,
 				7E2A7DED1AF999CC0032C727 /* Leader.swift in Sources */,
 				7E3B08741AEEE29800327B65 /* AppDelegate.swift in Sources */,
-				7E3B089A1AEEE86C00327B65 /* UpdatesTableViewController.swift in Sources */,
+				7E3B089A1AEEE86C00327B65 /* BillTableViewController.swift in Sources */,
 				7E2A7DEF1AF99A5B0032C727 /* LeadersList.swift in Sources */,
 				7E2A7DF11AFA73770032C727 /* LegislatorViewController.swift in Sources */,
 				7E5F11EA1AEF15D600E366A2 /* SWRevealViewController.m in Sources */,

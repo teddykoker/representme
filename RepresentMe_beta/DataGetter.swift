@@ -64,7 +64,26 @@ class DataGetter: NSObject,CLLocationManagerDelegate {
                     //remember to add them as vars to the leader struct
                     if let title = results[i]["title"] as? String{
                         if let bioguideId = results[i]["bioguide_id"] as? String{
-                            leaders.append(Leader(lastName: lastName, title: title, bioguideId: bioguideId))
+                            if let firstName = results[i]["first_name"] as? String{
+                                if let title = results[i]["title"] as? String{
+                                    if let state = results[i]["title"] as? String{
+                                        if let party = results[i]["party"] as? String{
+                                            if let birthday = results[i]["birthday"] as? String{
+                                                if let termStart = results[i]["term_start"] as? String{
+                                                    if let termEnd = results[i]["term_end"] as? String{
+                                                        if let phone = results[i]["phone"] as? String{
+                                                            if let website = results[i]["website"] as? String{
+                                                                leaders.append(Leader(firstName: firstName,lastName: lastName, title: title, bioguideId:bioguideId,party: party, state: state, birthday: birthday, term_start: termStart, term_end: termEnd, phone: phone, website: website))
+                                                                
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -72,5 +91,11 @@ class DataGetter: NSObject,CLLocationManagerDelegate {
         }
         leadersList.setLeaders(leaders)
         done()
+    }
+    func loadBills(){
+        
+    }
+    func loadBills(bioguideId: String){
+        
     }
 }
