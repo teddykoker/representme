@@ -17,7 +17,7 @@ class LeadersList {
         
     }
     private(set) var leaders:[Leader]
-    private var selected: Int
+    private(set) var selected: Int
     
     init(){
         leaders = []
