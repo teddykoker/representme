@@ -24,6 +24,7 @@ struct Leader {//I'll add more to this
     var phone: String
     var website: String
     //var contact_form: String
+    
    
     
 }

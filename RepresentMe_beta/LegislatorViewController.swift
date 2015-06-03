@@ -10,13 +10,31 @@ import Foundation
 import UIKit
 class LegislatorViewController: UIViewController{
     
+    var leadersList: LeadersList!
+    var leader: Leader!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var partyLabel: UILabel!
+    @IBOutlet weak var stateLabel: UILabel!
+    @IBOutlet weak var birthdayLabel: UILabel!
+    @IBOutlet weak var termlengthLabel: UILabel!
+    
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
+        super.viewDidLoad()
     }
     func configureView() {
+        leadersList = LeadersList.list
+        leader = leadersList.leaders[leadersList.selected]
+        titleLabel.text = leader.title
+        birthdayLabel.text = leader.birthday
+        println(leadersList.selected)
+        
+        
+        
+        
         // Update the user interface for the detail item.
         //let imgUrl = "http://theunitedstates.io/images/congress/225x275/\(leader.bioguideId).jpg"
         //loadImage(imgUrl)
