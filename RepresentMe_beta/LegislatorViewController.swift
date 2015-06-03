@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 class LegislatorViewController: UIViewController{
     
-    var leadersList: LeadersList!
+    var dataList: DataList!
     var leader: Leader!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var partyLabel: UILabel!
@@ -26,11 +26,11 @@ class LegislatorViewController: UIViewController{
         super.viewDidLoad()
     }
     func configureView() {
-        leadersList = LeadersList.list
-        leader = leadersList.leaders[leadersList.selected]
+        dataList = DataList.list
+        leader = dataList.leaders[dataList.selectedLeader]
         titleLabel.text = leader.title
         birthdayLabel.text = leader.birthday
-        println(leadersList.selected)
+        println(dataList.selectedLeader)
         
         
         

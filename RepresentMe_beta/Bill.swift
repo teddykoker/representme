@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct bill{
+struct Bill{
     var chamber: String
     var introduced_on: String
     var  official_title: String

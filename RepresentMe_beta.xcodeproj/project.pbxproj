@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7E2A7DEB1AF994550032C727 /* DataGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2A7DEA1AF994550032C727 /* DataGetter.swift */; };
 		7E2A7DED1AF999CC0032C727 /* Leader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2A7DEC1AF999CC0032C727 /* Leader.swift */; };
-		7E2A7DEF1AF99A5B0032C727 /* LeadersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2A7DEE1AF99A5B0032C727 /* LeadersList.swift */; };
+		7E2A7DEF1AF99A5B0032C727 /* DataList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2A7DEE1AF99A5B0032C727 /* DataList.swift */; };
 		7E2A7DF11AFA73770032C727 /* LegislatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2A7DF01AFA73770032C727 /* LegislatorViewController.swift */; };
 		7E3B08741AEEE29800327B65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B08731AEEE29800327B65 /* AppDelegate.swift */; };
 		7E3B08791AEEE29800327B65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E3B08771AEEE29800327B65 /* Main.storyboard */; };
@@ -22,6 +22,7 @@
 		7E3B089A1AEEE86C00327B65 /* BillTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B08991AEEE86C00327B65 /* BillTableViewController.swift */; };
 		7E5F11EA1AEF15D600E366A2 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F11E91AEF15D600E366A2 /* SWRevealViewController.m */; };
 		7E8963E51AF01FE800024DDA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E8963E41AF01FE800024DDA /* CoreLocation.framework */; };
+		7EFEBE541B1FBE41003AC683 /* BillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFEBE531B1FBE41003AC683 /* BillViewController.swift */; };
 		8E49C5DC1B1BE5B6003FD943 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E49C5DB1B1BE5B6003FD943 /* Bill.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +39,7 @@
 /* Begin PBXFileReference section */
 		7E2A7DEA1AF994550032C727 /* DataGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataGetter.swift; sourceTree = "<group>"; };
 		7E2A7DEC1AF999CC0032C727 /* Leader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leader.swift; sourceTree = "<group>"; };
-		7E2A7DEE1AF99A5B0032C727 /* LeadersList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeadersList.swift; sourceTree = "<group>"; };
+		7E2A7DEE1AF99A5B0032C727 /* DataList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataList.swift; sourceTree = "<group>"; };
 		7E2A7DF01AFA73770032C727 /* LegislatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegislatorViewController.swift; sourceTree = "<group>"; };
 		7E3B086E1AEEE29800327B65 /* RepresentMe_beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepresentMe_beta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3B08721AEEE29800327B65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,6 +58,7 @@
 		7E5F11E81AEF15D500E366A2 /* RepresentMe_beta-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RepresentMe_beta-Bridging-Header.h"; sourceTree = "<group>"; };
 		7E5F11E91AEF15D600E366A2 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		7E8963E41AF01FE800024DDA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7EFEBE531B1FBE41003AC683 /* BillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillViewController.swift; sourceTree = "<group>"; };
 		8E49C5DB1B1BE5B6003FD943 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,8 +112,9 @@
 				7E3B08991AEEE86C00327B65 /* BillTableViewController.swift */,
 				7E3B08771AEEE29800327B65 /* Main.storyboard */,
 				7E2A7DF01AFA73770032C727 /* LegislatorViewController.swift */,
+				7EFEBE531B1FBE41003AC683 /* BillViewController.swift */,
 				7E2A7DEA1AF994550032C727 /* DataGetter.swift */,
-				7E2A7DEE1AF99A5B0032C727 /* LeadersList.swift */,
+				7E2A7DEE1AF99A5B0032C727 /* DataList.swift */,
 				7E2A7DEC1AF999CC0032C727 /* Leader.swift */,
 				8E49C5DB1B1BE5B6003FD943 /* Bill.swift */,
 				7E3B087A1AEEE29800327B65 /* Images.xcassets */,
@@ -252,10 +255,11 @@
 				7E3B08961AEEE77100327B65 /* LegislatorsTableViewController.swift in Sources */,
 				7E3B08981AEEE81A00327B65 /* SettingsViewController.swift in Sources */,
 				7E2A7DEB1AF994550032C727 /* DataGetter.swift in Sources */,
+				7EFEBE541B1FBE41003AC683 /* BillViewController.swift in Sources */,
 				7E2A7DED1AF999CC0032C727 /* Leader.swift in Sources */,
 				7E3B08741AEEE29800327B65 /* AppDelegate.swift in Sources */,
 				7E3B089A1AEEE86C00327B65 /* BillTableViewController.swift in Sources */,
-				7E2A7DEF1AF99A5B0032C727 /* LeadersList.swift in Sources */,
+				7E2A7DEF1AF99A5B0032C727 /* DataList.swift in Sources */,
 				7E2A7DF11AFA73770032C727 /* LegislatorViewController.swift in Sources */,
 				7E5F11EA1AEF15D600E366A2 /* SWRevealViewController.m in Sources */,
 			);

@@ -11,7 +11,7 @@ class LegislatorsTableViewController: UITableViewController{
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     var datagetter: DataGetter!
-    var leaderList: LeadersList!
+    var dataList: DataList!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class LegislatorsTableViewController: UITableViewController{
         
         // *****SETUP*****
         datagetter = DataGetter()
-        leaderList = LeadersList.list
+        dataList = DataList.list
         refresh()
         
     }
@@ -40,7 +40,7 @@ class LegislatorsTableViewController: UITableViewController{
     }
     //called by refreshControl
     func refresh(){
-        datagetter.update(self)
+        datagetter.updateLegs(self)
     }
     //called by data-getting classes when they finish
     func refreshComplete(){
@@ -60,13 +60,13 @@ class LegislatorsTableViewController: UITableViewController{
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return leaderList.leaders.count
+        return dataList.leaders.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)as! UITableViewCell
         
-        let leader = leaderList.leaders[indexPath.row] as Leader
+        let leader = dataList.leaders[indexPath.row] as Leader
         cell.textLabel!.text = leader.lastName
         return cell
     }

@@ -12,13 +12,14 @@ import CoreLocation
 
 class DataGetter: NSObject,CLLocationManagerDelegate {
     
-    var leadersList: LeadersList
+    var dataList: DataList
     let locationManager = CLLocationManager()
     let key = "b93cc4cf0e9a4530b0e0ddb9f963e227"
-    var sender: LegislatorsTableViewController?
+    var senderLeg: LegislatorsTableViewController?
+    var senderBill: BillTableViewController?
     
     override init(){
-        leadersList = LeadersList.list
+        dataList = DataList.list
         super.init()
         if self.locationManager.respondsToSelector(Selector("requestAlwaysAuthorization")) {
             self.locationManager.requestWhenInUseAuthorization()
@@ -38,13 +39,22 @@ class DataGetter: NSObject,CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
         println("Error: " + error.localizedDescription)
     }
-    func update(sender:LegislatorsTableViewController){
+    func updateLegs(senderLeg:LegislatorsTableViewController){
         self.locationManager.startUpdatingLocation()
-        self.sender = sender
+        self.senderLeg = senderLeg
     }
-    func done(){
-        if sender != nil{
-            sender!.refreshComplete()
+    func updateBills(senderBill:BillTableViewController){
+        self.senderBill = senderBill
+        loadBills()
+    }
+    func doneLeg(){
+        if senderLeg != nil{
+            senderLeg!.refreshComplete()
+        }
+    }
+    func doneBill(){
+        if senderBill != nil{
+            senderBill!.refreshComplete()
         }
     }
     
@@ -89,10 +99,11 @@ class DataGetter: NSObject,CLLocationManagerDelegate {
                 }
             }
         }
-        leadersList.setLeaders(leaders)
-        done()
+        dataList.setLeaders(leaders)
+        doneLeg()
     }
     func loadBills(){
+        
         
     }
     func loadBills(bioguideId: String){
