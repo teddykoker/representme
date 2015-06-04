@@ -11,9 +11,9 @@ struct Bill{
     var chamber: String
     var introduced_on: String
     var  official_title: String
-    var short_title: String
-    var  popular_title: String
-    var summary: String
-    var sponsor: String
+   // var short_title: String
+    //var  popular_title: String
+   // var summary: String
+   // var sponsor: String
     
 }

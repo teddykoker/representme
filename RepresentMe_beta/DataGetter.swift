@@ -76,7 +76,7 @@ class DataGetter: NSObject,CLLocationManagerDelegate {
                         if let bioguideId = results[i]["bioguide_id"] as? String{
                             if let firstName = results[i]["first_name"] as? String{
                                 if let title = results[i]["title"] as? String{
-                                    if let state = results[i]["title"] as? String{
+                                    if let state = results[i]["state"] as? String{
                                         if let party = results[i]["party"] as? String{
                                             if let birthday = results[i]["birthday"] as? String{
                                                 if let termStart = results[i]["term_start"] as? String{
@@ -103,7 +103,31 @@ class DataGetter: NSObject,CLLocationManagerDelegate {
         doneLeg()
     }
     func loadBills(){
+        var bills: [Bill] = []
+        var urlString = "http://congress.api.sunlightfoundation.com/bills?history.enacted=true&apikey=\(key)"
+        let session = NSURLSession.sharedSession()
+        let legislatorURL = NSURL(string: urlString)
         
+        var jsonData = NSData(contentsOfURL: legislatorURL!, options: nil, error: nil)//Turns URL into Data
+        var jsonResult = NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary //Turns Data int Dictionary
+        
+        if let results = jsonResult["results"] as? NSArray{
+
+            for i in 0 ..< results.count {
+                if let chamber = results[i]["chamber"] as? String{
+                    //Keep putting if let statements with different traits you want
+                    //remember to add them as vars to the leader struct
+                    if let introducedOn = results[i]["introduced_on"] as? String{
+                            if let officialTitle = results[i]["official_title"] as? String{
+                                bills.append(Bill(chamber: chamber, introduced_on: introducedOn, official_title:officialTitle))
+                            }
+                    
+                    }
+                }
+            }
+        }
+        dataList.setBills(bills)
+        doneBill()
         
     }
     func loadBills(bioguideId: String){

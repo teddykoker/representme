@@ -64,9 +64,8 @@ class BillTableViewController: UITableViewController{
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)as! UITableViewCell
-        
         let bill = dataList.bills[indexPath.row] as Bill
-        cell.textLabel!.text = bill.short_title
+        cell.textLabel!.text = bill.official_title
         return cell
     }
     
