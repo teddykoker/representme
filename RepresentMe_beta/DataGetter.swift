@@ -76,7 +76,7 @@ class DataGetter: NSObject,CLLocationManagerDelegate {
                         if let bioguideId = results[i]["bioguide_id"] as? String{
                             if let firstName = results[i]["first_name"] as? String{
                                 if let title = results[i]["title"] as? String{
-                                    if let state = results[i]["state"] as? String{
+                                    if let state = results[i]["state_name"] as? String{
                                         if let party = results[i]["party"] as? String{
                                             if let birthday = results[i]["birthday"] as? String{
                                                 if let termStart = results[i]["term_start"] as? String{

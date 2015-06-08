@@ -12,11 +12,19 @@ class LegislatorViewController: UIViewController{
     
     var dataList: DataList!
     var leader: Leader!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var partyLabel: UILabel!
-    @IBOutlet weak var stateLabel: UILabel!
+ 
     @IBOutlet weak var birthdayLabel: UILabel!
     @IBOutlet weak var termlengthLabel: UILabel!
+    @IBOutlet weak var fullName: UINavigationItem!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var phonelabel: UILabel!
+    @IBOutlet weak var websiteLabel: UILabel!
+
+ 
+    
+   
+    
+    @IBOutlet weak var image: UIImageView!
     
     
     override func viewDidLoad() {
@@ -26,26 +34,72 @@ class LegislatorViewController: UIViewController{
         super.viewDidLoad()
     }
     func configureView() {
+        // Update the user interface for the detail item.
+       
+        //configuring all the labels
         dataList = DataList.list
         leader = dataList.leaders[dataList.selectedLeader]
-        titleLabel.text = leader.title
+       
         birthdayLabel.text = leader.birthday
-        println(dataList.selectedLeader)
+        fullName.title = leader.firstName + " " + leader.lastName
+       
+        termlengthLabel.text = leader.term_start + " until " + leader.term_end
+        phonelabel.text = leader.phone
+        websiteLabel.text = leader.website
+        
+        var partytitle = "  "
+        var jobDescription = " "
+        if(leader.party == "D"){
+            partytitle = "Democratic"
+        }else if(leader.party == "R"){
+            partytitle = "Republican"
+        }else if(leader.party == "I"){
+            partytitle = "Independent"
+        }
+        
+        if(leader.title == "Rep"){
+            jobDescription = "Representative"
+        }else if(leader.title == "Sen"){
+            jobDescription = "Senator"
+        }
+        
+        descriptionLabel.text = "\(partytitle) \(jobDescription) of \(leader.state)"
+
         
         
         
-        
-        // Update the user interface for the detail item.
-        //let imgUrl = "http://theunitedstates.io/images/congress/225x275/\(leader.bioguideId).jpg"
-        //loadImage(imgUrl)
-        //http://theunitedstates.io/images/congress/[size]/[bioguide].jpg for picture use 450by550 or 225by275
+     
+        let imgUrl = "http://theunitedstates.io/images/congress/225x275/\(leader.bioguideId).jpg"
+       load_image(imgUrl)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func loadImage(urlString:String)
-    {
+    
+    func updateDescriptionLabel(){
+        var partytitle = "  "
+        var jobDescription = " "
+        if(leader.party == "D"){
+            partytitle = "Democratic"
+        }else if(leader.party == "R"){
+            partytitle = "Republican"
+        }else if(leader.party == "I"){
+            partytitle = "Independent"
+        }
+        
+        if(leader.title == "Rep"){
+            jobDescription = "Representative"
+        }else if(leader.title == "Sen"){
+            jobDescription = "Senator"
+        }
+        
+        descriptionLabel.text = "\(partytitle) \(jobDescription) of \(leader.state)"
+        
+    
+    }
+    
+    func load_image(urlString:String){
         
         var imgURL: NSURL = NSURL(string: urlString)!
         let request: NSURLRequest = NSURLRequest(URL: imgURL)
@@ -53,9 +107,11 @@ class LegislatorViewController: UIViewController{
             request, queue: NSOperationQueue.mainQueue(),
             completionHandler: {(response: NSURLResponse!,data: NSData!,error: NSError!) -> Void in
                 if error == nil {
-                    //This is your picture UIImage(data: data)
+                    self.image.image = UIImage(data: data)
                 }
         })
         
     }
-}
+    
+    
+   }
