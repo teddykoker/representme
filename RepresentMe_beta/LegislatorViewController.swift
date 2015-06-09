@@ -14,7 +14,6 @@ class LegislatorViewController: UIViewController, UITableViewDelegate, UITableVi
     var leader: Leader!
  
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var fullName: UINavigationItem!
     @IBOutlet weak var descriptionLabel: UILabel!
   
 
@@ -47,7 +46,7 @@ class LegislatorViewController: UIViewController, UITableViewDelegate, UITableVi
         leader = dataList.leaders[dataList.selectedLeader]
        
         
-        fullName.title = leader.firstName + " " + leader.lastName
+        self.title = leader.firstName + " " + leader.lastName
         tableView.scrollEnabled = false
         var partytitle = "  "
         var jobDescription = " "

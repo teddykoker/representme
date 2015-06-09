@@ -76,7 +76,7 @@
             </objects>
             <point key="canvasLocation" x="798" y="-24"/>
         </scene>
-        <!--Full Name-->
+        <!--Title-->
         <scene sceneID="Xxv-Xp-jGX">
             <objects>
                 <viewController id="qCs-LO-z4l" customClass="LegislatorViewController" customModule="RepresentMe_beta" customModuleProvider="target" sceneMemberID="viewController">
@@ -141,11 +141,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Full Name" id="OmO-lf-ah4"/>
+                    <navigationItem key="navigationItem" title="Title" id="OmO-lf-ah4"/>
                     <connections>
-                        <outlet property="FullName" destination="OmO-lf-ah4" id="1ts-lj-Bfb"/>
                         <outlet property="descriptionLabel" destination="QBc-vt-CU4" id="CiS-NT-oAC"/>
-                        <outlet property="fullName" destination="OmO-lf-ah4" id="4R3-84-SLQ"/>
                         <outlet property="image" destination="9Xu-AG-eXH" id="Prz-uP-QxX"/>
                         <outlet property="tableView" destination="Qse-1P-N6r" id="TYA-w0-QOh"/>
                     </connections>
