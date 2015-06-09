@@ -79,6 +79,13 @@ class LegislatorsTableViewController: UITableViewController{
             if let data = NSData(contentsOfURL: url){
                 cell.imageView!.contentMode = UIViewContentMode.ScaleAspectFit
                 cell.imageView!.image = UIImage(data: data)
+                cell.imageView!.layer.cornerRadius = 20.0
+                
+                cell.imageView!.clipsToBounds = true
+                
+                // Adding a border to the image profile
+                cell.imageView!.layer.borderWidth = 5.0
+                cell.imageView!.layer.borderColor = UIColor.whiteColor().CGColor
             }
         }
         
