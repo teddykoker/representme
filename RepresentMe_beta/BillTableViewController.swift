@@ -68,6 +68,11 @@ class BillTableViewController: UITableViewController{
         cell.textLabel!.text = bill.official_title
         return cell
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let tableViewCell = sender as! UITableViewCell!
+        let indexPath = tableView.indexPathForCell(tableViewCell)!
+        dataList.setSelectedBill(indexPath.row)
+    }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
