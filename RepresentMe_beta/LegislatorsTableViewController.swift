@@ -90,7 +90,7 @@ class LegislatorsTableViewController: UITableViewController,  UISearchBarDelegat
                 cell.imageView!.clipsToBounds = true
                 
                 // Adding a border to the image profile
-                cell.imageView!.layer.borderWidth = 5.0
+                cell.imageView!.layer.borderWidth = 2.0
                 cell.imageView!.layer.borderColor = UIColor.whiteColor().CGColor
             }
         }
@@ -124,9 +124,16 @@ class LegislatorsTableViewController: UITableViewController,  UISearchBarDelegat
     func searchBarSearchButtonClicked( searchBar:UISearchBar){
         
       refreshWithQuery(searchBar.text)
-      self.resignFirstResponder()
+      searchBar.resignFirstResponder()
     
     }
+
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+        self.resignFirstResponder()
+        
+    }
+
     
         
     }
