@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class LegislatorsTableViewController: UITableViewController,  UISearchBarDelegate{
+class LegislatorsTableViewController: UITableViewController,  UISearchBarDelegate {
     
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -118,7 +118,9 @@ class LegislatorsTableViewController: UITableViewController,  UISearchBarDelegat
         }
     }
     
-    func searchBarSearchButtonClicked( searchBar: UISearchBar!){
+    func searchBarSearchButtonClicked( searchBar:UISearchBar){
+        
+        
         
     
     }
