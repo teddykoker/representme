@@ -124,7 +124,8 @@ class DataGetter: NSObject,CLLocationManagerDelegate {
     private func loadLegislators(query: String){
         
         var leaders: [Leader] = []
-        var urlString = "http://congress.api.sunlightfoundation.com/legislators?query=\(query)&apikey=\(key)"
+        let q = query.stringByReplacingOccurrencesOfString(" ", withString: "%20")
+        var urlString = "http://congress.api.sunlightfoundation.com/legislators?query=\(q)&apikey=\(key)"
         let session = NSURLSession.sharedSession()
         let legislatorURL = NSURL(string: urlString)
         
