@@ -45,7 +45,7 @@ class LegislatorViewController: UIViewController, UITableViewDelegate, UITableVi
        
         
         fullName.title = leader.firstName + " " + leader.lastName
-        
+        tableView.scrollEnabled = false
         var partytitle = "  "
         var jobDescription = " "
         if(leader.party == "D"){
@@ -70,15 +70,8 @@ class LegislatorViewController: UIViewController, UITableViewDelegate, UITableVi
      
         let imgUrl = "http://theunitedstates.io/images/congress/225x275/\(leader.bioguideId).jpg"
        load_image(imgUrl)
-        image.contentMode = UIViewContentMode.ScaleAspectFit
-        
-        image.layer.cornerRadius = 20.0
-        
-        image.clipsToBounds = true
-        
-        // Adding a border to the image profile
-        image.layer.borderWidth = 2.0
-        image.layer.borderColor = UIColor.whiteColor().CGColor
+        image.layer.cornerRadius = image.frame.size.width / 2;
+        image.clipsToBounds = true;
 
     }
     override func didReceiveMemoryWarning() {
@@ -167,12 +160,14 @@ class LegislatorViewController: UIViewController, UITableViewDelegate, UITableVi
             tableCell.selectionStyle = UITableViewCellSelectionStyle.Blue
             tableCell.textLabel?.text = "Facebook"
             tableCell.detailTextLabel!.text = "http://facebook.com/"+leader.facebook_id
+              tableCell.imageView!.image = UIImage(named: "facebook")
         case 6:
             tableCell.detailTextLabel!.textColor = UIColor.blueColor()
             tableCell.textLabel?.textColor = UIColor.blueColor()
             tableCell.selectionStyle = UITableViewCellSelectionStyle.Blue
             tableCell.textLabel?.text = "Twitter"
             tableCell.detailTextLabel!.text = "http://twitter.com/"+leader.twitter_id
+            tableCell.imageView!.image = UIImage(named: "twitter")
             
             
         default:
@@ -180,6 +175,7 @@ class LegislatorViewController: UIViewController, UITableViewDelegate, UITableVi
             tableCell.textLabel?.text = "Website"
             tableCell.detailTextLabel!.text = leader.website
             tableCell.selectionStyle = UITableViewCellSelectionStyle.None
+    
             
 
             
