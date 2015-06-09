@@ -123,9 +123,9 @@ class LegislatorsTableViewController: UITableViewController,  UISearchBarDelegat
     
     func searchBarSearchButtonClicked( searchBar:UISearchBar){
         
-      refreshWithQuery(searchBar.text)
+      
       searchBar.resignFirstResponder()
-    
+        refreshWithQuery(searchBar.text)
     }
 
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
