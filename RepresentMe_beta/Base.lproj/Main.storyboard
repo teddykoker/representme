@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Custom Navigation Controller-->
         <scene sceneID="lgY-7Q-jyI">
             <objects>
-                <navigationController id="3US-jr-ezm" sceneMemberID="viewController">
+                <navigationController id="3US-jr-ezm" customClass="customNavigationController" customModule="RepresentMe_beta" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mc1-E4-qRt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -57,9 +57,9 @@
                     <navigationItem key="navigationItem" title="Legislators" id="icS-Qd-Odc">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="xhR-DL-dQS"/>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="menuButton" destination="xhR-DL-dQS" id="Qyn-Fc-lE6"/>
+                        <outlet property="searchBar" destination="KxB-Xx-AH4" id="gZd-Jz-HBx"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZMh-IW-ZEP" userLabel="First Responder" sceneMemberID="firstResponder"/>

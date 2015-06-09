@@ -7,8 +7,10 @@
 //
 
 import UIKit
-class LegislatorsTableViewController: UITableViewController{
+class LegislatorsTableViewController: UITableViewController,  UISearchBarDelegate{
     
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     var datagetter: DataGetter!
     var dataList: DataList!
@@ -116,7 +118,11 @@ class LegislatorsTableViewController: UITableViewController{
         }
     }
     
-            
+    func searchBarSearchButtonClicked( searchBar: UISearchBar!){
+        
+    
+    }
+    
         
     }
     
