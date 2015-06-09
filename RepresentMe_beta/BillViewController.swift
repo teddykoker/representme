@@ -14,6 +14,8 @@ class BillViewController: UIViewController{
     @IBOutlet weak var textView: UITextView!
     var dataList: DataList!
     var bill: Bill!
+    @IBOutlet weak var ChamberLabel: UINavigationItem!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func viewDidLoad() {
         
@@ -35,7 +37,8 @@ class BillViewController: UIViewController{
         bill = dataList.bills[dataList.selectedLeader]
         
         textView.text = bill.official_title
-        
+        ChamberLabel.title = bill.chamber
+        dateLabel.text = bill.introduced_on
         
     
     
