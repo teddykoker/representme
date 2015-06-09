@@ -70,8 +70,14 @@ class LegislatorViewController: UIViewController, UITableViewDelegate, UITableVi
      
         let imgUrl = "http://theunitedstates.io/images/congress/225x275/\(leader.bioguideId).jpg"
        load_image(imgUrl)
-        image.layer.cornerRadius = image.frame.size.width / 2;
-        image.clipsToBounds = true;
+       
+            image.contentMode = UIViewContentMode.ScaleAspectFit
+        
+            image.layer.cornerRadius = 20.0
+            
+            image.clipsToBounds = true
+            
+        
 
     }
     override func didReceiveMemoryWarning() {

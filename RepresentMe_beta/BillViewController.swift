@@ -34,7 +34,7 @@ class BillViewController: UIViewController{
     
     func configureView(){
         dataList = DataList.list
-        bill = dataList.bills[dataList.selectedLeader]
+        bill = dataList.bills[dataList.selectedBill]
         
         textView.text = bill.official_title
         ChamberLabel.title = bill.chamber
