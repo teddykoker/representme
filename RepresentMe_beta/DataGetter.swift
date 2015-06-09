@@ -102,6 +102,50 @@ class DataGetter: NSObject,CLLocationManagerDelegate {
         dataList.setLeaders(leaders)
         doneLeg()
     }
+    func loadLegislators(query: String){
+        
+        var leaders: [Leader] = []
+        var urlString = "congress.api.sunlightfoundation.com/legislators?query=\(query)&apikey=\(key)"
+        let session = NSURLSession.sharedSession()
+        let legislatorURL = NSURL(string: urlString)
+        
+        var jsonData = NSData(contentsOfURL: legislatorURL!, options: nil, error: nil)//Turns URL into Data
+        var jsonResult = NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary //Turns Data int Dictionary
+        
+        if let results = jsonResult["results"] as? NSArray{
+            for i in 0 ..< results.count {
+                if let lastName = results[i]["last_name"] as? String{ //Keep putting if let statements with different traits you want
+                    //remember to add them as vars to the leader struct
+                    if let title = results[i]["title"] as? String{
+                        if let bioguideId = results[i]["bioguide_id"] as? String{
+                            if let firstName = results[i]["first_name"] as? String{
+                                if let title = results[i]["title"] as? String{
+                                    if let state = results[i]["state_name"] as? String{
+                                        if let party = results[i]["party"] as? String{
+                                            if let birthday = results[i]["birthday"] as? String{
+                                                if let termStart = results[i]["term_start"] as? String{
+                                                    if let termEnd = results[i]["term_end"] as? String{
+                                                        if let phone = results[i]["phone"] as? String{
+                                                            if let website = results[i]["website"] as? String{
+                                                                leaders.append(Leader(firstName: firstName,lastName: lastName, title: title, bioguideId:bioguideId,party: party, state: state, birthday: birthday, term_start: termStart, term_end: termEnd, phone: phone, website: website))
+                                                                
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        dataList.setLeaders(leaders)
+        doneLeg()
+    }
     func loadBills(){
         var bills: [Bill] = []
         var urlString = "http://congress.api.sunlightfoundation.com/bills?history.enacted=true&apikey=\(key)"
