@@ -49,6 +49,7 @@ class LegislatorsTableViewController: UITableViewController,  UISearchBarDelegat
         datagetter.updateLegs(self)
     }
     func refreshWithQuery(query: String){
+        datagetter.updateLegs(self, query: query)
     }
     //called by data-getting classes when they finish
     func refreshComplete(){
@@ -122,8 +123,8 @@ class LegislatorsTableViewController: UITableViewController,  UISearchBarDelegat
     
     func searchBarSearchButtonClicked( searchBar:UISearchBar){
         
-        
-      println(searchBar.text)
+      refreshWithQuery(searchBar.text)
+      self.resignFirstResponder()
     
     }
     

@@ -43,6 +43,10 @@ class DataGetter: NSObject,CLLocationManagerDelegate {
         self.locationManager.startUpdatingLocation()
         self.senderLeg = senderLeg
     }
+    func updateLegs(senderLeg:LegislatorsTableViewController, query: String){
+        loadLegislators(query)
+        self.senderLeg = senderLeg
+    }
     func updateBills(senderBill:BillTableViewController){
         self.senderBill = senderBill
         loadBills()
