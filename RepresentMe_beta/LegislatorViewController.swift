@@ -30,9 +30,14 @@ class LegislatorViewController: UIViewController{
     override func viewDidLoad() {
         
         // Do any additional setup after loading the view, typically from a nib.
+       
         self.configureView()
         super.viewDidLoad()
     }
+    
+    
+    
+    
     func configureView() {
         // Update the user interface for the detail item.
        

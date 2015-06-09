@@ -12,6 +12,7 @@ class LegislatorsTableViewController: UITableViewController{
     @IBOutlet weak var menuButton: UIBarButtonItem!
     var datagetter: DataGetter!
     var dataList: DataList!
+    var images: [UIImage]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,8 @@ class LegislatorsTableViewController: UITableViewController{
         datagetter = DataGetter()
         dataList = DataList.list
         refresh()
+       
+        
         
     }
     override func didReceiveMemoryWarning() {
@@ -49,6 +52,7 @@ class LegislatorsTableViewController: UITableViewController{
             self.tableView.reloadData()
         })
         refreshControl?.endRefreshing()
+        
     }
     
     
@@ -64,10 +68,24 @@ class LegislatorsTableViewController: UITableViewController{
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)as! UITableViewCell
         
+       
         let leader = dataList.leaders[indexPath.row] as Leader
         cell.textLabel!.text = leader.lastName
+        
+        if let url = NSURL(string: "http://theunitedstates.io/images/congress/225x275/\(leader.bioguideId).jpg") {
+            if let data = NSData(contentsOfURL: url){
+                cell.imageView!.contentMode = UIViewContentMode.ScaleAspectFit
+                cell.imageView!.image = UIImage(data: data)
+            }
+        }
+        
+        
+       
+       
+        
         return cell
     }
     
@@ -84,4 +102,8 @@ class LegislatorsTableViewController: UITableViewController{
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
-}
+    
+            
+        
+    }
+    
