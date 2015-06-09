@@ -19,12 +19,14 @@ class DataList {
     private(set) var bills: [Bill]
     private(set) var selectedLeader: Int
     private(set) var selectedBill: Int
+    private(set) var billsFromLeader: Bool
     
     init(){
         leaders = []
         bills = []
         selectedLeader = 0
         selectedBill = 0
+        billsFromLeader = false
     }
     func setLeaders(l:[Leader]){
         leaders = l
@@ -38,5 +40,7 @@ class DataList {
     func setSelectedBill(index: Int){
         selectedBill = index
     }
-
+    func setBillsFromLeader(b: Bool){
+        billsFromLeader = b
+    }
 }

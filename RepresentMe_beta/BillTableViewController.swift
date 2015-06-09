@@ -39,7 +39,15 @@ class BillTableViewController: UITableViewController{
     }
     //called by refreshControl
     func refresh(){
+        if dataList.billsFromLeader{
+            datagetter.updateBills(self, bioId: dataList.leaders[dataList.selectedLeader].bioguideId)
+            dataList.setBillsFromLeader(false)
+        }else{
         datagetter.updateBills(self)
+        }
+    }
+    func refreshWithId(bioId: String){
+        datagetter.updateBills(self, bioId: bioId)
     }
     //called by data-getting classes when they finish
     func refreshComplete(){

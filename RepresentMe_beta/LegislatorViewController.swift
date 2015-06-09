@@ -19,6 +19,9 @@ class LegislatorViewController: UIViewController, UITableViewDelegate, UITableVi
   
 
  
+    @IBAction func findBills(sender: UIButton) {
+        dataList.setBillsFromLeader(true)
+    }
     
    
     
