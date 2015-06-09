@@ -8,17 +8,15 @@
 
 import Foundation
 import UIKit
-class LegislatorViewController: UIViewController{
+class LegislatorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     var dataList: DataList!
     var leader: Leader!
  
-    @IBOutlet weak var birthdayLabel: UILabel!
-    @IBOutlet weak var termlengthLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var fullName: UINavigationItem!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var phonelabel: UILabel!
-    @IBOutlet weak var websiteLabel: UILabel!
+  
 
  
     
@@ -45,12 +43,7 @@ class LegislatorViewController: UIViewController{
         dataList = DataList.list
         leader = dataList.leaders[dataList.selectedLeader]
        
-        birthdayLabel.text = leader.birthday
-        fullName.title = leader.firstName + " " + leader.lastName
-       
-        termlengthLabel.text = leader.term_start + " until " + leader.term_end
-        phonelabel.text = leader.phone
-        websiteLabel.text = leader.website
+     
         
         var partytitle = "  "
         var jobDescription = " "
@@ -76,6 +69,16 @@ class LegislatorViewController: UIViewController{
      
         let imgUrl = "http://theunitedstates.io/images/congress/225x275/\(leader.bioguideId).jpg"
        load_image(imgUrl)
+        image.contentMode = UIViewContentMode.ScaleAspectFit
+        
+        image.layer.cornerRadius = 20.0
+        
+        image.clipsToBounds = true
+        
+        // Adding a border to the image profile
+        image.layer.borderWidth = 2.0
+        image.layer.borderColor = UIColor.whiteColor().CGColor
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -117,6 +120,70 @@ class LegislatorViewController: UIViewController{
         })
         
     }
+    
+   
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        dataList = DataList.list
+        leader = dataList.leaders[dataList.selectedLeader]
+        
+        let tableCell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+      
+        
+        switch(indexPath.row){
+        case 0:
+            tableCell.textLabel?.text = "Term"
+            tableCell.selectionStyle = UITableViewCellSelectionStyle.None
+            
+            tableCell.detailTextLabel!.text = leader.term_start + " until " + leader.term_end
+            
+        case 1:tableCell.textLabel?.text = "Birthday"
+            tableCell.detailTextLabel!.text = leader.birthday
+        tableCell.selectionStyle = UITableViewCellSelectionStyle.None
+
+        case 2:tableCell.textLabel?.text = "Phone Number"
+            tableCell.detailTextLabel!.text = leader.phone
+            tableCell.selectionStyle = UITableViewCellSelectionStyle.None
+            
+        case 3:
+            tableCell.selectionStyle = UITableViewCellSelectionStyle.Blue
+            tableCell.textLabel?.text = "Website"
+            tableCell.detailTextLabel!.text = leader.website
+            
+            
+        default:
+            tableCell.textLabel?.text = "Website"
+            tableCell.detailTextLabel!.text = leader.website
+            tableCell.selectionStyle = UITableViewCellSelectionStyle.None
+
+            
+        }
+        
+        return tableCell
+        
+       
+    
+        
+        
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        
+        if (indexPath.row == 3){
+            UIApplication.sharedApplication().openURL(NSURL(string: leader.website)!)
+        }else if(indexPath == 2){
+            var url:NSURL = NSURL(string: "tel://9809088798")!
+            UIApplication.sharedApplication().openURL(url)
+        }
+        
+        
+    }
+
     
     
    }
