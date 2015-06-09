@@ -125,7 +125,7 @@ class LegislatorViewController: UIViewController, UITableViewDelegate, UITableVi
    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 7
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -149,13 +149,30 @@ class LegislatorViewController: UIViewController, UITableViewDelegate, UITableVi
         case 2:tableCell.textLabel?.text = "Phone Number"
             tableCell.detailTextLabel!.text = leader.phone
             tableCell.selectionStyle = UITableViewCellSelectionStyle.None
-            
         case 3:
+            tableCell.textLabel?.text = "Office"
+            tableCell.detailTextLabel!.text = leader.office
+            tableCell.selectionStyle = UITableViewCellSelectionStyle.None
+            
+        case 4:
             tableCell.detailTextLabel!.textColor = UIColor.blueColor()
             tableCell.textLabel?.textColor = UIColor.blueColor()
             tableCell.selectionStyle = UITableViewCellSelectionStyle.Blue
             tableCell.textLabel?.text = "Website"
             tableCell.detailTextLabel!.text = leader.website
+            
+        case 5:
+            tableCell.detailTextLabel!.textColor = UIColor.blueColor()
+            tableCell.textLabel?.textColor = UIColor.blueColor()
+            tableCell.selectionStyle = UITableViewCellSelectionStyle.Blue
+            tableCell.textLabel?.text = "Facebook"
+            tableCell.detailTextLabel!.text = "http://facebook.com/"+leader.facebook_id
+        case 6:
+            tableCell.detailTextLabel!.textColor = UIColor.blueColor()
+            tableCell.textLabel?.textColor = UIColor.blueColor()
+            tableCell.selectionStyle = UITableViewCellSelectionStyle.Blue
+            tableCell.textLabel?.text = "Twitter"
+            tableCell.detailTextLabel!.text = "http://twitter.com/"+leader.twitter_id
             
             
         default:
@@ -178,17 +195,14 @@ class LegislatorViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        
-        if (indexPath.row == 3){
-            UIApplication.sharedApplication().openURL(NSURL(string: leader.website)!)
-        }else if(indexPath == 2){
-            var url:NSURL = NSURL(string: "tel://9809088798")!
-            UIApplication.sharedApplication().openURL(url)
-        }
-        
-        
-    }
+        switch(indexPath.row){
+        case 4:  UIApplication.sharedApplication().openURL(NSURL(string: leader.website)!)
+        case 5:   UIApplication.sharedApplication().openURL(NSURL(string: "http://facebook.com/"+leader.facebook_id)!)
+        case 6:  UIApplication.sharedApplication().openURL(NSURL(string: "http://twitter.com/"+leader.twitter_id)!)
+        default: return
+            }
 
     
     
    }
+}
