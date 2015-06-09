@@ -40,9 +40,11 @@ class BillTableViewController: UITableViewController{
     //called by refreshControl
     func refresh(){
         if dataList.billsFromLeader{
+            self.title = "Sponsored by \(dataList.leaders[dataList.selectedLeader].lastName)"
             datagetter.updateBills(self, bioId: dataList.leaders[dataList.selectedLeader].bioguideId)
             dataList.setBillsFromLeader(false)
         }else{
+            self.title = "Recent Bills"
         datagetter.updateBills(self)
         }
     }
