@@ -39,6 +39,8 @@ class DataGetter: NSObject,CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
         println("Error: " + error.localizedDescription)
     }
+    
+    //These are the only functions that need to be called from other classes
     func updateLegs(senderLeg:LegislatorsTableViewController){
         self.locationManager.startUpdatingLocation()
         self.senderLeg = senderLeg
@@ -51,44 +53,51 @@ class DataGetter: NSObject,CLLocationManagerDelegate {
         self.senderBill = senderBill
         loadBills()
     }
-    func doneLeg(){
+    func updateBills(senderBill:BillTableViewController, bioId: String){
+        self.senderBill = senderBill
+        loadBills(bioId)
+    }
+    //********************************************************************
+    private func doneLeg(){
         if senderLeg != nil{
             senderLeg!.refreshComplete()
         }
     }
-    func doneBill(){
+    private func doneBill(){
         if senderBill != nil{
             senderBill!.refreshComplete()
         }
     }
     
-    func loadLegislators(lat:Double, long:Double){
+    private func loadLegislators(lat:Double, long:Double){
         
         var leaders: [Leader] = []
         var urlString = "http://congress.api.sunlightfoundation.com/legislators/locate?latitude=\(lat)&longitude=\(long)&apikey=\(key)"
         let session = NSURLSession.sharedSession()
         let legislatorURL = NSURL(string: urlString)
         
-        var jsonData = NSData(contentsOfURL: legislatorURL!, options: nil, error: nil)//Turns URL into Data
-        var jsonResult = NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary //Turns Data int Dictionary
-        
-        if let results = jsonResult["results"] as? NSArray{
-            for i in 0 ..< results.count {
-                if let lastName = results[i]["last_name"] as? String{ //Keep putting if let statements with different traits you want
-                    //remember to add them as vars to the leader struct
-                    if let title = results[i]["title"] as? String{
-                        if let bioguideId = results[i]["bioguide_id"] as? String{
-                            if let firstName = results[i]["first_name"] as? String{
-                                if let title = results[i]["title"] as? String{
-                                    if let state = results[i]["state_name"] as? String{
-                                        if let party = results[i]["party"] as? String{
-                                            if let birthday = results[i]["birthday"] as? String{
-                                                if let termStart = results[i]["term_start"] as? String{
-                                                    if let termEnd = results[i]["term_end"] as? String{
-                                                        if let phone = results[i]["phone"] as? String{
-                                                            if let website = results[i]["website"] as? String{
-                                                                leaders.append(Leader(firstName: firstName,lastName: lastName, title: title, bioguideId:bioguideId,party: party, state: state, birthday: birthday, term_start: termStart, term_end: termEnd, phone: phone, website: website))
-                                                                
+        if let jsonData = NSData(contentsOfURL: legislatorURL!, options: nil, error: nil){//Turns URL into Data
+            
+            let jsonResult = NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary //Turns Data int Dictionary
+            
+            if let results = jsonResult["results"] as? NSArray{
+                for i in 0 ..< results.count {
+                    if let lastName = results[i]["last_name"] as? String{ //Keep putting if let statements with different traits you want
+                        //remember to add them as vars to the leader struct
+                        if let title = results[i]["title"] as? String{
+                            if let bioguideId = results[i]["bioguide_id"] as? String{
+                                if let firstName = results[i]["first_name"] as? String{
+                                    if let title = results[i]["title"] as? String{
+                                        if let state = results[i]["state_name"] as? String{
+                                            if let party = results[i]["party"] as? String{
+                                                if let birthday = results[i]["birthday"] as? String{
+                                                    if let termStart = results[i]["term_start"] as? String{
+                                                        if let termEnd = results[i]["term_end"] as? String{
+                                                            if let phone = results[i]["phone"] as? String{
+                                                                if let website = results[i]["website"] as? String{
+                                                                    leaders.append(Leader(firstName: firstName,lastName: lastName, title: title, bioguideId:bioguideId,party: party, state: state, birthday: birthday, term_start: termStart, term_end: termEnd, phone: phone, website: website))
+                                                                    
+                                                                }
                                                             }
                                                         }
                                                     }
@@ -106,33 +115,35 @@ class DataGetter: NSObject,CLLocationManagerDelegate {
         dataList.setLeaders(leaders)
         doneLeg()
     }
-    func loadLegislators(query: String){
+    private func loadLegislators(query: String){
         
         var leaders: [Leader] = []
         var urlString = "http://congress.api.sunlightfoundation.com/legislators?query=\(query)&apikey=\(key)"
         let session = NSURLSession.sharedSession()
         let legislatorURL = NSURL(string: urlString)
-        println("\(urlString)")
-        var jsonData = NSData(contentsOfURL: legislatorURL!, options: nil, error: nil)//Turns URL into Data
-        var jsonResult = NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary //Turns Data int Dictionary
         
-        if let results = jsonResult["results"] as? NSArray{
-            for i in 0 ..< results.count {
-                if let lastName = results[i]["last_name"] as? String{ //Keep putting if let statements with different traits you want
-                    //remember to add them as vars to the leader struct
-                    if let title = results[i]["title"] as? String{
-                        if let bioguideId = results[i]["bioguide_id"] as? String{
-                            if let firstName = results[i]["first_name"] as? String{
-                                if let title = results[i]["title"] as? String{
-                                    if let state = results[i]["state_name"] as? String{
-                                        if let party = results[i]["party"] as? String{
-                                            if let birthday = results[i]["birthday"] as? String{
-                                                if let termStart = results[i]["term_start"] as? String{
-                                                    if let termEnd = results[i]["term_end"] as? String{
-                                                        if let phone = results[i]["phone"] as? String{
-                                                            if let website = results[i]["website"] as? String{
-                                                                leaders.append(Leader(firstName: firstName,lastName: lastName, title: title, bioguideId:bioguideId,party: party, state: state, birthday: birthday, term_start: termStart, term_end: termEnd, phone: phone, website: website))
-                                                                
+        if let jsonData = NSData(contentsOfURL: legislatorURL!, options: nil, error: nil){//Turns URL into Data
+            
+            let jsonResult = NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary //Turns Data int Dictionary
+            
+            if let results = jsonResult["results"] as? NSArray{
+                for i in 0 ..< results.count {
+                    if let lastName = results[i]["last_name"] as? String{ //Keep putting if let statements with different traits you want
+                        //remember to add them as vars to the leader struct
+                        if let title = results[i]["title"] as? String{
+                            if let bioguideId = results[i]["bioguide_id"] as? String{
+                                if let firstName = results[i]["first_name"] as? String{
+                                    if let title = results[i]["title"] as? String{
+                                        if let state = results[i]["state_name"] as? String{
+                                            if let party = results[i]["party"] as? String{
+                                                if let birthday = results[i]["birthday"] as? String{
+                                                    if let termStart = results[i]["term_start"] as? String{
+                                                        if let termEnd = results[i]["term_end"] as? String{
+                                                            if let phone = results[i]["phone"] as? String{
+                                                                if let website = results[i]["website"] as? String{
+                                                                    leaders.append(Leader(firstName: firstName,lastName: lastName, title: title, bioguideId:bioguideId,party: party, state: state, birthday: birthday, term_start: termStart, term_end: termEnd, phone: phone, website: website))
+                                                                    
+                                                                }
                                                             }
                                                         }
                                                     }
@@ -150,26 +161,27 @@ class DataGetter: NSObject,CLLocationManagerDelegate {
         dataList.setLeaders(leaders)
         doneLeg()
     }
-    func loadBills(){
+    
+    private func loadBills(){
         var bills: [Bill] = []
         var urlString = "http://congress.api.sunlightfoundation.com/bills?history.enacted=true&apikey=\(key)"
         let session = NSURLSession.sharedSession()
         let legislatorURL = NSURL(string: urlString)
         
-        var jsonData = NSData(contentsOfURL: legislatorURL!, options: nil, error: nil)//Turns URL into Data
-        var jsonResult = NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary //Turns Data int Dictionary
-        
-        if let results = jsonResult["results"] as? NSArray{
-
-            for i in 0 ..< results.count {
-                if let chamber = results[i]["chamber"] as? String{
-                    //Keep putting if let statements with different traits you want
-                    //remember to add them as vars to the leader struct
-                    if let introducedOn = results[i]["introduced_on"] as? String{
+        if let jsonData = NSData(contentsOfURL: legislatorURL!, options: nil, error: nil){//Turns URL into Data
+            let jsonResult = NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary //Turns Data int Dictionary
+            
+            if let results = jsonResult["results"] as? NSArray{
+                
+                for i in 0 ..< results.count {
+                    if let chamber = results[i]["chamber"] as? String{
+                        //Keep putting if let statements with different traits you want
+                        //remember to add them as vars to the leader struct
+                        if let introducedOn = results[i]["introduced_on"] as? String{
                             if let officialTitle = results[i]["official_title"] as? String{
                                 bills.append(Bill(chamber: chamber, introduced_on: introducedOn, official_title:officialTitle))
                             }
-                    
+                        }
                     }
                 }
             }
@@ -178,31 +190,32 @@ class DataGetter: NSObject,CLLocationManagerDelegate {
         doneBill()
         
     }
-    func loadBills(bioguideId: String){
+    private func loadBills(bioguideId: String){
         var bills: [Bill] = []
         var urlString = "http://congress.api.sunlightfoundation.com/bills?sponsor_id=\(bioguideId)&apikey=\(key)"
         let session = NSURLSession.sharedSession()
         let legislatorURL = NSURL(string: urlString)
         
-        var jsonData = NSData(contentsOfURL: legislatorURL!, options: nil, error: nil)//Turns URL into Data
-        var jsonResult = NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary //Turns Data int Dictionary
-        
-        if let results = jsonResult["results"] as? NSArray{
+        if let jsonData = NSData(contentsOfURL: legislatorURL!, options: nil, error: nil){//Turns URL into Data
+            let jsonResult = NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary //Turns Data int Dictionary
             
-            for i in 0 ..< results.count {
-                if let chamber = results[i]["chamber"] as? String{
-                    //Keep putting if let statements with different traits you want
-                    //remember to add them as vars to the leader struct
-                    if let introducedOn = results[i]["introduced_on"] as? String{
-                        if let officialTitle = results[i]["official_title"] as? String{
-                            bills.append(Bill(chamber: chamber, introduced_on: introducedOn, official_title:officialTitle))
+            if let results = jsonResult["results"] as? NSArray{
+                
+                for i in 0 ..< results.count {
+                    if let chamber = results[i]["chamber"] as? String{
+                        //Keep putting if let statements with different traits you want
+                        //remember to add them as vars to the leader struct
+                        if let introducedOn = results[i]["introduced_on"] as? String{
+                            if let officialTitle = results[i]["official_title"] as? String{
+                                bills.append(Bill(chamber: chamber, introduced_on: introducedOn, official_title:officialTitle))
+                            }
                         }
-                        
                     }
                 }
             }
         }
         dataList.setBills(bills)
         doneBill()
+        
     }
 }
