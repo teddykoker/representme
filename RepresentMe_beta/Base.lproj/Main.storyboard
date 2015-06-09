@@ -364,10 +364,10 @@
             </objects>
             <point key="canvasLocation" x="769" y="664"/>
         </scene>
-        <!--View Controller-->
+        <!--Chamber-->
         <scene sceneID="HTY-5K-vfr">
             <objects>
-                <viewController id="Vzr-vr-FId" sceneMemberID="viewController">
+                <viewController id="Vzr-vr-FId" customClass="BillViewController" customModule="RepresentMe_beta" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="asU-Rk-e15"/>
                         <viewControllerLayoutGuide type="bottom" id="mDo-uU-Aa7"/>
@@ -375,8 +375,29 @@
                     <view key="view" contentMode="scaleToFill" id="eeN-nz-3Ke">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dw1-hC-vQb">
+                                <rect key="frame" x="16" y="58" width="325" height="256"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4g-ea-7Ll">
+                                <rect key="frame" x="16" y="20" width="318" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Chamber" id="yUb-BW-iKP"/>
+                    <connections>
+                        <outlet property="ChamberLabel" destination="yUb-BW-iKP" id="rHt-Y6-DaD"/>
+                        <outlet property="dateLabel" destination="D4g-ea-7Ll" id="0FM-rF-vfQ"/>
+                        <outlet property="textView" destination="dw1-hC-vQb" id="5Ob-ot-W7N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q6Y-kF-Rq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
