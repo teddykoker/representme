@@ -25,6 +25,7 @@ class LegislatorsTableViewController: UITableViewController{
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
+        
         // *****REFRESH*****
         var refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
