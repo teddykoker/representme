@@ -105,10 +105,10 @@ class DataGetter: NSObject,CLLocationManagerDelegate {
     func loadLegislators(query: String){
         
         var leaders: [Leader] = []
-        var urlString = "congress.api.sunlightfoundation.com/legislators?query=\(query)&apikey=\(key)"
+        var urlString = "http://congress.api.sunlightfoundation.com/legislators?query=\(query)&apikey=\(key)"
         let session = NSURLSession.sharedSession()
         let legislatorURL = NSURL(string: urlString)
-        
+        println("\(urlString)")
         var jsonData = NSData(contentsOfURL: legislatorURL!, options: nil, error: nil)//Turns URL into Data
         var jsonResult = NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary //Turns Data int Dictionary
         
@@ -176,7 +176,7 @@ class DataGetter: NSObject,CLLocationManagerDelegate {
     }
     func loadBills(bioguideId: String){
         var bills: [Bill] = []
-        var urlString = "congress.api.sunlightfoundation.com/bills?sponsor_id=\(bioguideId)&apikey=\(key)"
+        var urlString = "http://congress.api.sunlightfoundation.com/bills?sponsor_id=\(bioguideId)&apikey=\(key)"
         let session = NSURLSession.sharedSession()
         let legislatorURL = NSURL(string: urlString)
         
