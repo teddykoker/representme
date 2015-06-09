@@ -23,7 +23,9 @@ struct Leader {//I'll add more to this
     var term_end: String
     var phone: String
     var website: String
-    //var contact_form: String
+    var twitter_id: String
+    var facebook_id: String
+    var office: String
     
    
     

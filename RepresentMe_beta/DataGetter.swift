@@ -84,19 +84,25 @@ class DataGetter: NSObject,CLLocationManagerDelegate {
                 for i in 0 ..< results.count {
                     if let lastName = results[i]["last_name"] as? String{ //Keep putting if let statements with different traits you want
                         //remember to add them as vars to the leader struct
-                        if let title = results[i]["title"] as? String{
-                            if let bioguideId = results[i]["bioguide_id"] as? String{
-                                if let firstName = results[i]["first_name"] as? String{
+                        if let twitter_id = results[i]["twitter_id"] as? String{
+                            if let facebook_id = results[i]["facebook_id"] as? String{
+                                if let office = results[i]["office"] as? String{
                                     if let title = results[i]["title"] as? String{
-                                        if let state = results[i]["state_name"] as? String{
-                                            if let party = results[i]["party"] as? String{
-                                                if let birthday = results[i]["birthday"] as? String{
-                                                    if let termStart = results[i]["term_start"] as? String{
-                                                        if let termEnd = results[i]["term_end"] as? String{
-                                                            if let phone = results[i]["phone"] as? String{
-                                                                if let website = results[i]["website"] as? String{
-                                                                    leaders.append(Leader(firstName: firstName,lastName: lastName, title: title, bioguideId:bioguideId,party: party, state: state, birthday: birthday, term_start: termStart, term_end: termEnd, phone: phone, website: website))
-                                                                    
+                                        if let bioguideId = results[i]["bioguide_id"] as? String{
+                                            if let firstName = results[i]["first_name"] as? String{
+                                                if let title = results[i]["title"] as? String{
+                                                    if let state = results[i]["state_name"] as? String{
+                                                        if let party = results[i]["party"] as? String{
+                                                            if let birthday = results[i]["birthday"] as? String{
+                                                                if let termStart = results[i]["term_start"] as? String{
+                                                                    if let termEnd = results[i]["term_end"] as? String{
+                                                                        if let phone = results[i]["phone"] as? String{
+                                                                            if let website = results[i]["website"] as? String{
+                                                                                leaders.append(Leader(firstName: firstName,lastName: lastName, title: title, bioguideId:bioguideId,party: party, state: state, birthday: birthday, term_start: termStart, term_end: termEnd, phone: phone, website: website, twitter_id: twitter_id, facebook_id: facebook_id, office: office))
+                                                                                
+                                                                            }
+                                                                        }
+                                                                    }
                                                                 }
                                                             }
                                                         }
@@ -130,19 +136,25 @@ class DataGetter: NSObject,CLLocationManagerDelegate {
                 for i in 0 ..< results.count {
                     if let lastName = results[i]["last_name"] as? String{ //Keep putting if let statements with different traits you want
                         //remember to add them as vars to the leader struct
-                        if let title = results[i]["title"] as? String{
-                            if let bioguideId = results[i]["bioguide_id"] as? String{
-                                if let firstName = results[i]["first_name"] as? String{
+                        if let twitter_id = results[i]["twitter_id"] as? String{
+                            if let facebook_id = results[i]["facebook_id"] as? String{
+                                if let office = results[i]["office"] as? String{
                                     if let title = results[i]["title"] as? String{
-                                        if let state = results[i]["state_name"] as? String{
-                                            if let party = results[i]["party"] as? String{
-                                                if let birthday = results[i]["birthday"] as? String{
-                                                    if let termStart = results[i]["term_start"] as? String{
-                                                        if let termEnd = results[i]["term_end"] as? String{
-                                                            if let phone = results[i]["phone"] as? String{
-                                                                if let website = results[i]["website"] as? String{
-                                                                    leaders.append(Leader(firstName: firstName,lastName: lastName, title: title, bioguideId:bioguideId,party: party, state: state, birthday: birthday, term_start: termStart, term_end: termEnd, phone: phone, website: website))
-                                                                    
+                                        if let bioguideId = results[i]["bioguide_id"] as? String{
+                                            if let firstName = results[i]["first_name"] as? String{
+                                                if let title = results[i]["title"] as? String{
+                                                    if let state = results[i]["state_name"] as? String{
+                                                        if let party = results[i]["party"] as? String{
+                                                            if let birthday = results[i]["birthday"] as? String{
+                                                                if let termStart = results[i]["term_start"] as? String{
+                                                                    if let termEnd = results[i]["term_end"] as? String{
+                                                                        if let phone = results[i]["phone"] as? String{
+                                                                            if let website = results[i]["website"] as? String{
+                                                                                leaders.append(Leader(firstName: firstName,lastName: lastName, title: title, bioguideId:bioguideId,party: party, state: state, birthday: birthday, term_start: termStart, term_end: termEnd, phone: phone, website: website, twitter_id: twitter_id, facebook_id: facebook_id, office: office))
+                                                                                
+                                                                            }
+                                                                        }
+                                                                    }
                                                                 }
                                                             }
                                                         }
