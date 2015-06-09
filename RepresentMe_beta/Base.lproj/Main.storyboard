@@ -180,7 +180,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Cdh-SI-LtI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3sl-mm-Jhm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -408,9 +408,10 @@
         <scene sceneID="oeg-Ie-aQ5">
             <objects>
                 <navigationController id="Byl-zu-85h" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hgN-hQ-FyJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="hgN-hQ-FyJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.054901960780000002" green="0.4039215686" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
