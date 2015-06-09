@@ -48,6 +48,8 @@ class LegislatorsTableViewController: UITableViewController,  UISearchBarDelegat
     func refresh(){
         datagetter.updateLegs(self)
     }
+    func refreshWithQuery(query: String){
+    }
     //called by data-getting classes when they finish
     func refreshComplete(){
         self.tableView.reloadData()
