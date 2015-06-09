@@ -43,7 +43,8 @@ class LegislatorViewController: UIViewController, UITableViewDelegate, UITableVi
         dataList = DataList.list
         leader = dataList.leaders[dataList.selectedLeader]
        
-     
+        
+        fullName.title = leader.firstName + " " + leader.lastName
         
         var partytitle = "  "
         var jobDescription = " "
