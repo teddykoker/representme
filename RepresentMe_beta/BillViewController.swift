@@ -23,6 +23,11 @@ class BillViewController: UIViewController{
         
         super.viewDidLoad()
         configureView()
+        // *****SIDEBAR*****
+        if self.revealViewController() != nil {
+            self.revealViewController().rearViewRevealWidth = 170
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
     }
     
     

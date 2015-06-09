@@ -33,6 +33,11 @@ class LegislatorViewController: UIViewController, UITableViewDelegate, UITableVi
        
         self.configureView()
         super.viewDidLoad()
+        // *****SIDEBAR*****
+        if self.revealViewController() != nil {
+            self.revealViewController().rearViewRevealWidth = 170
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
     }
     
     
