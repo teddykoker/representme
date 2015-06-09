@@ -121,7 +121,7 @@ class LegislatorsTableViewController: UITableViewController,  UISearchBarDelegat
     func searchBarSearchButtonClicked( searchBar:UISearchBar){
         
         
-        
+        println("hello")
     
     }
     

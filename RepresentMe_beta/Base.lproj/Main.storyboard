@@ -36,7 +36,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
-                                <outlet property="delegate" destination="uba-9Z-Tds" id="VSL-xx-heM"/>
+                                <outlet property="delegate" destination="bsu-5z-Gwd" id="cef-uq-fPi"/>
                             </connections>
                         </searchBar>
                         <prototypes>
@@ -62,7 +62,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="xhR-DL-dQS" id="Qyn-Fc-lE6"/>
-                        <outlet property="searchBar" destination="KxB-Xx-AH4" id="gZd-Jz-HBx"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZMh-IW-ZEP" userLabel="First Responder" sceneMemberID="firstResponder"/>
