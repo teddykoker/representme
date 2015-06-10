@@ -17,6 +17,18 @@ class LegislatorViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var descriptionLabel: UILabel!
   
 
+    @IBAction func faceBookButton(sender: AnyObject) {
+        
+        UIApplication.sharedApplication().openURL(NSURL(string: "http://facebook.com/"+leader.facebook_id)!)
+    }
+    
+   
+    @IBAction func TwitterButton(sender: AnyObject) {
+        UIApplication.sharedApplication().openURL(NSURL(string: "http://twitter.com/"+leader.twitter_id)!)
+
+        
+    }
+    
  
     @IBAction func findBills(sender: UIButton) {
         dataList.setBillsFromLeader(true)
@@ -131,7 +143,7 @@ class LegislatorViewController: UIViewController, UITableViewDelegate, UITableVi
    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 5
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -167,20 +179,7 @@ class LegislatorViewController: UIViewController, UITableViewDelegate, UITableVi
             tableCell.textLabel?.text = "Website"
             tableCell.detailTextLabel!.text = leader.website
             
-        case 5:
-            tableCell.detailTextLabel!.textColor = UIColor.blueColor()
-            tableCell.textLabel?.textColor = UIColor.blueColor()
-            tableCell.selectionStyle = UITableViewCellSelectionStyle.Blue
-            tableCell.textLabel?.text = "Facebook"
-            tableCell.detailTextLabel!.text = "http://facebook.com/"+leader.facebook_id
-              tableCell.imageView!.image = UIImage(named: "facebook")
-        case 6:
-            tableCell.detailTextLabel!.textColor = UIColor.blueColor()
-            tableCell.textLabel?.textColor = UIColor.blueColor()
-            tableCell.selectionStyle = UITableViewCellSelectionStyle.Blue
-            tableCell.textLabel?.text = "Twitter"
-            tableCell.detailTextLabel!.text = "http://twitter.com/"+leader.twitter_id
-            tableCell.imageView!.image = UIImage(named: "twitter")
+    
             
             
         default:
@@ -206,8 +205,7 @@ class LegislatorViewController: UIViewController, UITableViewDelegate, UITableVi
         
         switch(indexPath.row){
         case 4:  UIApplication.sharedApplication().openURL(NSURL(string: leader.website)!)
-        case 5:   UIApplication.sharedApplication().openURL(NSURL(string: "http://facebook.com/"+leader.facebook_id)!)
-        case 6:  UIApplication.sharedApplication().openURL(NSURL(string: "http://twitter.com/"+leader.twitter_id)!)
+      
         default: return
             }
 
