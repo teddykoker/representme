@@ -173,8 +173,9 @@ class LegislatorViewController: UIViewController, UITableViewDelegate, UITableVi
             tableCell.selectionStyle = UITableViewCellSelectionStyle.None
             
         case 4:
-            tableCell.detailTextLabel!.textColor = UIColor.blueColor()
-            tableCell.textLabel?.textColor = UIColor.blueColor()
+            tableCell.detailTextLabel!.textColor = UIColor(red: 0.0, green: 140.0/255.0, blue: 186.0/255.0, alpha: 1.0)
+            tableCell.textLabel?.textColor =  UIColor(red: 0.0, green: 140.0/255.0, blue: 186.0/255.0, alpha: 1.0)
+
             tableCell.selectionStyle = UITableViewCellSelectionStyle.Blue
             tableCell.textLabel?.text = "Website"
             tableCell.detailTextLabel!.text = leader.website

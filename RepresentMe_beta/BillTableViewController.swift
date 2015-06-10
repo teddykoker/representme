@@ -76,6 +76,8 @@ class BillTableViewController: UITableViewController{
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)as! UITableViewCell
         let bill = dataList.bills[indexPath.row] as Bill
         cell.textLabel!.text = bill.official_title
+        cell.textLabel!.font = UIFont.systemFontOfSize(13.0)
+        cell.textLabel!.numberOfLines = 0
         return cell
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
